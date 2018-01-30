@@ -75,9 +75,9 @@ class TrackScroller extends Component {
   }
 
   _renderViews() {
-    // we need Children map in order for the infinite option to work
+    // we need Children toArray in order for the infinite option to work
     // not actually sure why this is the case
-    return Children.map(this.props.children, child => child)
+    return React.Children.toArray(this.props.children)
   }
 
   render() {
@@ -135,7 +135,6 @@ class Track extends Component {
   }
 
   _currentTween = 0
-  _hydrate = false
 
   componentWillMount() {
     this.context.pager.setOptions(this.props)
@@ -178,14 +177,7 @@ class Track extends Component {
     // update any options that have changed
     if (isNotEqual(this.props, nextProps)) {
       this.context.pager.setOptions(nextProps)
-      this._hydrate = true
-    }
-  }
-
-  componentDidUpdate(nextProps) {
-    if (this._hydrate) {
       this.context.pager.hydrate()
-      this._hydrate = false
     }
   }
 

@@ -18,14 +18,7 @@ class ViewPager extends Component {
   constructor(props) {
     super(props)
 
-    const pager = new Pager()
-    const forceUpdate = () => this.forceUpdate()
-
-    // re-render the whole tree to update components on certain events
-    pager.on('viewChange', forceUpdate)
-    pager.on('hydrated', forceUpdate)
-
-    this._pager = pager
+    this._pager = new Pager()
   }
 
   getChildContext() {
@@ -35,10 +28,25 @@ class ViewPager extends Component {
   }
 
   componentDidMount() {
+    const forceUpdate = () => this.forceUpdate()
+
     // run a hydration on the next animation frame to obtain proper targets and positioning
     requestAnimationFrame(() => {
       this._pager.hydrate()
+
+      // re-render the whole tree to update components on certain events
+      this._pager.on('viewChange', forceUpdate)
+      this._pager.on('hydrated', forceUpdate)
     })
+
+    this.off = () => {
+      this._pager.off('viewChange', forceUpdate)
+      this._pager.off('hydrated', forceUpdate)
+    }
+  }
+
+  componentWillUnmount () {
+    this.off && this.off()
   }
 
   getInstance() {

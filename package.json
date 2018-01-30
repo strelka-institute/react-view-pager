@@ -1,6 +1,6 @@
 {
   "name": "@strelka/react-view-pager",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "View-Pager/Slider/Carousel powered by React Motion.",
   "main": "lib/react-view-pager.js",
   "files": [

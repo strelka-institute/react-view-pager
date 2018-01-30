@@ -1,6 +1,6 @@
-## React View Pager (Prerelease)
+## React View Pager (fork)
 
-[![Dependency Status](https://david-dm.org/souporserious/react-view-pager.svg)](https://david-dm.org/souporserious/react-view-pager)
+[![Dependency Status](https://david-dm.org/strelka-institute/react-view-pager.svg)](https://david-dm.org/strelka-institute/react-view-pager)
 
 View-Pager/Slider/Carousel powered by React Motion.
 
@@ -12,7 +12,7 @@ Use at your own risk, API's are subject to change. It's been fairly stable these
 
 ## Usage
 
-`yarn add react-view-pager`
+`yarn add @strelka/react-view-pager`
 
 `npm install react-view-pager --save`
 

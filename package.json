@@ -1,5 +1,5 @@
 {
-  "name": "react-view-pager",
+  "name": "@strelka/react-view-pager",
   "version": "0.5.1",
   "description": "View-Pager/Slider/Carousel powered by React Motion.",
   "main": "lib/react-view-pager.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/souporserious/react-view-pager"
+    "url": "https://github.com/strelka-institute/react-view-pager"
   },
   "keywords": [
     "react",
@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/souporserious/react-view-pager/issues"
   },
-  "homepage": "https://github.com/souporserious/react-view-pager",
+  "homepage": "https://github.com/strelka-institute/react-view-pager",
   "dependencies": {
     "animation-bus": "^0.2.0",
     "get-prefix": "^1.0.0",

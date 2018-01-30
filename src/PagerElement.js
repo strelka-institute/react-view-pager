@@ -7,8 +7,9 @@ class PagerElement {
   }
 
   setSize(width, height) {
-    this.width = width || this.node.offsetWidth
-    this.height = height || this.node.offsetHeight
+    const rect = this.node.getBoundingClientRect()
+    this.width = width || rect.width
+    this.height = height || rect.height
   }
 
   setPosition(position) {

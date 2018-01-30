@@ -1,9 +1,12 @@
 import React from 'react'
 import reactDom from 'react-dom/server'
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import assert from 'assert'
 
 import { ViewPager, Frame, Track, View }  from '../src/react-view-pager'
+
+Enzyme.configure({ adapter: new Adapter(), disableLifecycleMethods: true });
 
 describe('ViewPager', () => {
 
